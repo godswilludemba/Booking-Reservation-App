@@ -7,7 +7,7 @@ export default function Feature() {
         <img
           src="https://cf.bstatic.com/xdata/images/city/600x600/822312.jpg?k=f0e5aa24884bf61ddc08284c59807fa7d3a66b72fbdcec15488faf45824143b6&o="
           alt="hotel"
-          className="featureImg w-[100%] object-cover"
+          className="featureImg w-[100%] object-cover rounded-[10px]"
         />
         <div className="featureTitles absolute bottom-5 left-5 font-semibold">
           <h1>Dublin</h1>
@@ -19,7 +19,7 @@ export default function Feature() {
         <img
           src="https://cf.bstatic.com/xdata/images/city/600x600/684500.jpg?k=df54bcea224564a0a00497a2076d5338316a0b56692498eddb3c02c9a6cdde64&o="
           alt="hotel"
-          className="featureImg w-[100%] object-cover"
+          className="featureImg w-[100%] object-cover rounded-[10px]"
         />
         <div className="featureTitles absolute bottom-5 left-5 font-semibold">
           <h1>Paris</h1>
@@ -31,25 +31,13 @@ export default function Feature() {
         <img
           src="https://cf.bstatic.com/xdata/images/city/600x600/613088.jpg?k=a370ac3fb385fb211b35a79a42b0e968ddb458be37108af476c558bf4cedc1f3&o="
           alt="hotel"
-          className="featureImg w-[100%] object-cove"
+          className="featureImg w-[100%] object-cover rounded-[10px]"
         />
         <div className="featureTitles absolute bottom-5 left-5 font-semibold">
           <h1>Dubai</h1>
           <h2>007 Properties</h2>
         </div>
       </div>
-
-      {/* <div className="featureItem">
-        <img
-          src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/04/12/0338/PARPH-P1330-Pur-Restaurant-Dining-Area-Round.jpg/PARPH-P1330-Pur-Restaurant-Dining-Area-Round.4x3.jpg?imwidth=320"
-          alt="hotel"
-          className="featureImg w-[100%] object-cover"
-        />
-        <div className="featureTitles">
-          <h1>Bahamas</h1>
-          <h2>001 Properties</h2>
-        </div>
-      </div> */}
     </div>
   );
 }

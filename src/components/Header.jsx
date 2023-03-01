@@ -9,8 +9,10 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ type }) {
+  const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -27,6 +29,8 @@ export default function Header({ type }) {
     room: 1,
   });
 
+  const navigate = useNavigate();
+
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -34,6 +38,10 @@ export default function Header({ type }) {
         [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
       };
     });
+  };
+
+  const handleSearch = () => {
+    navigate("/hotels", { state: { destination, date, options } });
   };
 
   return (
@@ -48,7 +56,7 @@ export default function Header({ type }) {
         <div
           className={
             type === "list"
-              ? "listContainer listMood flex  w-full max-w-5xl gap-10 mb-12 mr-28 justify-center"
+              ? "listContainer listMood flex  w-full max-w-5xl gap-10 mb-8 mr-28 justify-center"
               : "headerList flex gap-10 "
           }
         >
@@ -88,14 +96,15 @@ export default function Header({ type }) {
             </button>
             <div
               className="headerSearch h-5 flex bg-white items-center justify-around border-2
-        py-5 border-yellow-300 absolute bottom-[-25px] w-full max-w-5xl"
+               py-5 border-yellow-300 absolute bottom-[-25px] w-full max-w-5xl"
             >
               <div className="headerSearchItem   flex items-center justify-center gap-2">
                 <MdHotel className="text-gray-300" />
                 <input
                   type="text"
                   placeholder="where are you going"
-                  className="headerSearchInput border-none"
+                  className="headerSearchInput border-none text-slate-500"
+                  onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
 
@@ -117,6 +126,7 @@ export default function Header({ type }) {
                     onChange={(item) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
+                    minDate={new Date()}
                     className="absolute top-[42px] z-20"
                   />
                 )}
@@ -202,7 +212,10 @@ export default function Header({ type }) {
                 )}
               </div>
               <div className="headerSearchItem  flex items-center justify-center gap-1">
-                <button className="text-white bg-slate-400 py-1 px-2 rounded">
+                <button
+                  onClick={handleSearch}
+                  className="text-white bg-slate-400 py-1 px-2 rounded"
+                >
                   Search
                 </button>
               </div>
