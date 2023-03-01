@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import MailList from "./MailList";
 
 export default function SearchItem() {
@@ -42,7 +43,10 @@ export default function SearchItem() {
           <span className="siTaxOp text-[12px] text-gray-300">
             Includes taxes and fees
           </span>
-          <button className="siCheckButton bg-green-300 text-white font-bold py-1 px-2 rounded-t-md cursor-pointer">
+          <button
+            onClick={() => Navigate("/:id")}
+            className="siCheckButton bg-green-300 text-white font-bold py-1 px-2 rounded-t-md cursor-pointer"
+          >
             See Availability
           </button>
         </div>
