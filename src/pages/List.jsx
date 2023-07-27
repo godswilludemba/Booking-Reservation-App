@@ -63,7 +63,7 @@ export default function List() {
                   </span>
                   <input
                     type="number"
-                    min={100000}
+                    min={1000}
                     className="lsOptionInput w-[56%]"
                   />
                 </div>
@@ -74,7 +74,7 @@ export default function List() {
                   </span>
                   <input
                     type="number"
-                    min={400000}
+                    max={4000}
                     className="lsOptionInput w-[56%]"
                   />
                 </div>
